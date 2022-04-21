@@ -1,0 +1,61 @@
+.section-one{
+    background-color: white;
+    color: darkcyan;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px 15px 0 0;
+}
+
+.left{
+    display: flex;
+    margin: 1rem;
+}
+
+.icon{
+    max-height: 100%;
+    display: flex;
+    align-self: center;
+}
+
+.icon img{
+   
+   width: 100px;
+}
+
+.temperature{
+    align-self: center;
+    font-size: 2rem;
+    display: flex;
+}
+
+.temperature h2{
+    align-self: center;
+    font-size: 3.8rem;
+}
+
+.details{
+    font-size: 0.8rem;
+    align-self: center;
+    margin-left: 0.8rem;
+    font-weight: 500;
+}
+
+.location{
+    align-self: center;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+}
+
+.degrees-buttons button{
+    all:unset;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 0.4rem;
+    color: lightblue;
+}
+
+button:disabled{
+    color: darkcyan;
+    cursor:default;
+}

@@ -1,0 +1,118 @@
+.section-two{
+    background-color: white;
+    position: relative;
+    width: 800px;
+    padding-top: 1rem;
+    overflow: hidden;
+    height: 200px;
+}
+
+.third-list{
+    display: flex;
+    width: 1600px;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    height: 103px;
+}
+
+.tile-third{
+    background-color: #9CCCFF;
+    border-top: 2px solid #5094E0;
+    
+    width: 100%;
+    
+}
+
+.percipitation-percents{
+    display: flex;
+    width: 1600px;
+    justify-content: space-between;
+    color: #5094E0;
+}
+
+
+.percent-container{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.hours-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7rem 0;
+    width: 1600px;
+}
+
+.hours-container{
+    width: 100%;
+    text-align: center;
+}
+
+.section-two img{
+    width: 20px;
+}
+
+.button-left img{
+    transform: scaleX(-1);
+}
+
+
+.section-two-container{
+    
+    position: absolute;
+    transition: all 0.5s ease ;
+    left: 0;
+}
+
+
+
+.arrow-left{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    transform: scaleX(-1);
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    z-index: 3;
+    opacity: 0.3;
+}
+
+.arrow-left:hover{
+    opacity: 0.6;
+}
+.arrow-right:hover{
+    opacity: 0.6;
+}
+
+.arrow-right{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.arrow-left:disabled{
+    opacity: 0;
+}
+
+.arrow-right:disabled{
+    opacity: 0;
+}
+
+
+
+
+.section-two-container.moved{
+    left: -800px;
+    transition: all 0.5s ease ;
+}

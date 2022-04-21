@@ -1,0 +1,49 @@
+.section-three{
+    background-color: white;
+    color: black;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 15px 15px;
+    padding-bottom: 1rem;
+}
+
+.tile-list{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.tile{
+    max-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.tile img{
+ width: 60px;
+}
+
+.max-min-temp{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.min{
+    color: black;
+}
+
+.max{
+    color: lightcoral;
+}
+
+.tile:hover{
+    background-color: lightgrey;
+}
