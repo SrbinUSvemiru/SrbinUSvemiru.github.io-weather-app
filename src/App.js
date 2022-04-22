@@ -59,6 +59,7 @@ function App() {
           <SectionTwo
             dailyWeather={bulkWeather.daily}
             hourlyWeather={bulkWeather.hourly}
+            units={units}
           />
           <SectionThree dailyWeather={bulkWeather.daily} />
         </>

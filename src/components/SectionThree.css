@@ -6,6 +6,7 @@
     justify-content: center;
     border-radius: 0 0 15px 15px;
     padding-bottom: 1rem;
+    margin: 0 auto;
 }
 
 .tile-list{
@@ -16,14 +17,14 @@
 }
 
 .tile{
-    max-width: 60px;
+   
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
     border-radius: 10px;
-    margin: 0 1rem;
+    padding:  1rem;
 }
 
 .tile img{
@@ -45,5 +46,5 @@
 }
 
 .tile:hover{
-    background-color: lightgrey;
+    background-color: rgba(249, 165, 134, 0.399);
 }

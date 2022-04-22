@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import TileThird from "./TileThird";
 import "./SectionTwo.css";
 
-function Percipitation({ hourlyWeather }) {
+function Percipitation({ hourlyWeather, btnTwo }) {
   const [threeHoursSum, setThreeHoursSum] = useState();
   useEffect(() => {
     setThreeHoursSum(() => {
@@ -30,7 +30,7 @@ function Percipitation({ hourlyWeather }) {
   console.log(threeHoursSum);
 
   return (
-    <div className="percipitation">
+    <div className={`percipitation ${btnTwo ? "visible" : ""}`}>
       <div className="percipitation-percents">
         {!threeHoursSum
           ? ""

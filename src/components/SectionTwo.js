@@ -1,10 +1,32 @@
 import React, { useState } from "react";
 import HoursList from "./HoursList";
 import Percipitation from "./Percipitation";
+import Wind from "./Wind";
 import "./SectionTwo.css";
 
-function SectionTwo({ dailyWeather, hourlyWeather }) {
+function SectionTwo({ dailyWeather, hourlyWeather, units }) {
   const [clicked, setClicked] = useState(true);
+  const [btnOne, setBtnOne] = useState(true);
+  const [btnTwo, setBtnTwo] = useState(false);
+  const [btnThree, setBtnThree] = useState(false);
+
+  const handleClickOne = () => {
+    setBtnOne(true);
+    setBtnTwo(false);
+    setBtnThree(false);
+  };
+
+  const handleClickTwo = () => {
+    setBtnOne(false);
+    setBtnTwo(true);
+    setBtnThree(false);
+  };
+
+  const handleClickThree = () => {
+    setBtnOne(false);
+    setBtnTwo(false);
+    setBtnThree(true);
+  };
 
   const moveContainer = () => {
     setClicked(!clicked);
@@ -18,17 +40,33 @@ function SectionTwo({ dailyWeather, hourlyWeather }) {
           disabled={clicked}
           onClick={() => moveContainer()}
         >
-          <img src="../left.png" />
+          <img src="./left.png" />
         </button>
         <button
           className="arrow-right"
           disabled={!clicked}
           onClick={() => moveContainer()}
         >
-          <img src="../right.png" />
+          <img src="./right.png" />
         </button>
+        <div className="navigators">
+          <button onClick={() => handleClickOne()} disabled={btnOne}>
+            Temperature
+          </button>
+          <button onClick={() => handleClickTwo()} disabled={btnTwo}>
+            Percipitation
+          </button>
+          <button onClick={() => handleClickThree()} disabled={btnThree}>
+            Wind
+          </button>
+        </div>
         <div className={`section-two-container ${!clicked ? "moved" : ""}`}>
-          <Percipitation hourlyWeather={hourlyWeather} />
+          <Percipitation hourlyWeather={hourlyWeather} btnTwo={btnTwo} />
+          <Wind
+            hourlyWeather={hourlyWeather}
+            btnThree={btnThree}
+            units={units}
+          />
           <HoursList />
         </div>
       </div>
