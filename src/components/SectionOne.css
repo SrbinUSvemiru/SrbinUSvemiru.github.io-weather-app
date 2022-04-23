@@ -50,15 +50,30 @@
     margin-right: 2rem;
 }
 
+.degrees-buttons{
+    display: flex;
+    height: 30px;
+    align-self: center;
+    margin-bottom: 1rem;
+    margin-left: 0.2rem;
+}
+
 .degrees-buttons button{
-    all:unset;
+    background-color: white;
     cursor: pointer;
     font-size: 1.1rem;
-    margin-left: 0.4rem;
+    border: none;
     color: lightblue;
+    width: 100%;
+    height: 20px;
+    padding-left: 0.2rem;
 }
 
 button:disabled{
     color: darkcyan;
     cursor:default;
+}
+
+#farenheit{
+    border-left: 2px solid darkcyan;
 }

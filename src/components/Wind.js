@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./SectionTwo.css";
 
-function Wind({ hourlyWeather, units }) {
+function Wind({ hourlyWeather, units, btnThree }) {
   return (
-    <div className="wind">
+    <div className={`wind ${btnThree ? "visible" : ""}`}>
       <div className="wind-speed">
         {hourlyWeather.map((value, index) =>
           index % 3 === 0 ? (
             <p className="wind-kmh">
               {units === "metric"
-                ? `${Math.floor((value.wind_speed * 3.6 * 2) / 2)} km/h`
+                ? `${Math.floor((value.wind_speed * 7.2) / 2)} km/h`
                 : `${Math.floor((value.wind_speed * 2) / 2)} mph`}
             </p>
           ) : null

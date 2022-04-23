@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HoursList from "./HoursList";
 import Percipitation from "./Percipitation";
 import Wind from "./Wind";
+import Temperature from "./Temperature";
 import "./SectionTwo.css";
 
 function SectionTwo({ dailyWeather, hourlyWeather, units }) {
@@ -53,7 +54,11 @@ function SectionTwo({ dailyWeather, hourlyWeather, units }) {
           <button onClick={() => handleClickOne()} disabled={btnOne}>
             Temperature
           </button>
-          <button onClick={() => handleClickTwo()} disabled={btnTwo}>
+          <button
+            onClick={() => handleClickTwo()}
+            disabled={btnTwo}
+            id="percipitation-button"
+          >
             Percipitation
           </button>
           <button onClick={() => handleClickThree()} disabled={btnThree}>
@@ -67,6 +72,7 @@ function SectionTwo({ dailyWeather, hourlyWeather, units }) {
             btnThree={btnThree}
             units={units}
           />
+
           <HoursList />
         </div>
       </div>

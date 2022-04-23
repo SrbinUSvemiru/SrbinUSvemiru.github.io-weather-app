@@ -26,9 +26,6 @@ function Percipitation({ hourlyWeather, btnTwo }) {
     });
   }, []);
 
-  console.log(hourlyWeather, "hourly");
-  console.log(threeHoursSum);
-
   return (
     <div className={`percipitation ${btnTwo ? "visible" : ""}`}>
       <div className="percipitation-percents">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./SectionOne.css";
 
 function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits }) {
   const [buttonState, setButtonState] = useState(true);
@@ -35,7 +36,7 @@ function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits }) {
             &#176;C
           </button>
           <button
-            className="farenheit"
+            id="farenheit"
             disabled={!buttonState}
             onClick={() => buttonClick("imperial")}
           >
