@@ -21,9 +21,25 @@
 .tile-third{
     background-color: #c1dcf8e3;
     border-top: 2px solid #5094E0;
-    
+    border-radius:3px 3px 0 0 ;
     width: 100%;
     
+}
+
+.tile-third-temp{
+    background-color: rgba(255, 166, 0, 0.26);
+    border-top: 2px solid orange;
+   
+    width: 100%;
+}
+
+.temp-third-list{
+    display: flex;
+    width: 1600px;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    height: 120px;
 }
 
 
@@ -41,6 +57,11 @@
     text-align: center;
 }
 
+.temp-percent-container{
+    width: 100%;
+    text-align: center;
+}
+
 
 
 .hours-list{
@@ -48,6 +69,8 @@
     justify-content: space-between;
     margin: 0.7rem 0;
     width: 1600px;
+    position: absolute;
+    bottom: -185px;
 }
 
 .hours-container{
@@ -116,9 +139,11 @@
 
 
 .percipitation{
-    position: relative;
-    
+    width: 1600px;
+    position: absolute;
+    top: 0;
     background-color: white;
+    height: 150px;
 }
 
 .percipitation.visible{
@@ -136,7 +161,6 @@
     width: 1600px;
     position: absolute;
     top: 0;
-    
     background-color: white;
     height: 150px;
 }
@@ -188,4 +212,24 @@
 .navigators button:disabled{
     border-bottom: 2px solid orange;
     cursor: default;
+}
+
+
+.temperature{
+    width: 1600px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    height: 150px;
+}
+
+.temperature-value{
+    display: flex;
+    width: 1600px;
+    justify-content: space-between;
+    color: orange;
+}
+
+.temperature.visible{
+    z-index: 10;
 }

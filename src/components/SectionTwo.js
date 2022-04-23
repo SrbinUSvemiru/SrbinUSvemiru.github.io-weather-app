@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import HoursList from "./HoursList";
 import Percipitation from "./Percipitation";
 import Wind from "./Wind";
-import Temperature from "./Temperature";
+
 import "./SectionTwo.css";
+import Temperature from "./Temperature";
 
 function SectionTwo({ dailyWeather, hourlyWeather, units }) {
   const [clicked, setClicked] = useState(true);
@@ -66,6 +67,11 @@ function SectionTwo({ dailyWeather, hourlyWeather, units }) {
           </button>
         </div>
         <div className={`section-two-container ${!clicked ? "moved" : ""}`}>
+          <Temperature
+            btnOne={btnOne}
+            hourlyWeather={hourlyWeather}
+            units={units}
+          />
           <Percipitation hourlyWeather={hourlyWeather} btnTwo={btnTwo} />
           <Wind
             hourlyWeather={hourlyWeather}

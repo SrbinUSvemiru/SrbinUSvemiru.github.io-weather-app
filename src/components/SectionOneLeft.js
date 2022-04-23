@@ -25,7 +25,7 @@ function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits }) {
         ))}
       </div>
 
-      <div className="temperature">
+      <div className="section-one-temperature">
         <h2>{roundNum(currentWeather.temp)}</h2>
         <div className="degrees-buttons">
           <button

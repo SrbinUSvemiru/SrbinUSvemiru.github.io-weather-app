@@ -24,13 +24,13 @@
    width: 100px;
 }
 
-.temperature{
+.section-one-temperature{
     align-self: center;
     font-size: 2rem;
     display: flex;
 }
 
-.temperature h2{
+.section-one-temperature h2{
     align-self: center;
     font-size: 3.8rem;
 }
