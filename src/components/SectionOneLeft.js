@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./SectionOne.css";
 
-function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits }) {
+function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits, units }) {
   const [buttonState, setButtonState] = useState(true);
 
   const buttonClick = (value) => {
@@ -12,6 +12,8 @@ function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits }) {
   const roundNum = (num) => {
     return Math.round(num * 2) / 2;
   };
+
+  console.log(dailyWeather[0], "kueac");
 
   return (
     <div className="left">
@@ -46,9 +48,12 @@ function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits }) {
       </div>
 
       <div className="details">
-        <p>Percipitation: {dailyWeather[0].pop * 100}% </p>
+        <p>Percipitation: {Math.round(dailyWeather[0].pop * 100)}% </p>
         <p>Humidity: {currentWeather.humidity}%</p>
-        <p>Wind: {currentWeather.wind_speed} km/h</p>
+        <p>
+          Wind: {currentWeather.wind_speed}{" "}
+          {units === "metric" ? "km/h" : "mph"}
+        </p>
       </div>
     </div>
   );

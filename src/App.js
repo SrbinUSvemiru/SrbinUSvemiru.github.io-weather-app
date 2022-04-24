@@ -55,6 +55,7 @@ function App() {
             lat={lat}
             lon={lon}
             chooseUnits={chooseUnits}
+            units={units}
           />
           <SectionTwo
             dailyWeather={bulkWeather.daily}

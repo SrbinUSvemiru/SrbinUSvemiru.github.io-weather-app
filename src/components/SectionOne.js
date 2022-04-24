@@ -3,7 +3,14 @@ import "./SectionOne.css";
 import SectionOneLeft from "./SectionOneLeft";
 import SectionOneRight from "./SectionOneRight";
 
-function SectionOne({ currentWeather, dailyWeather, lat, lon, chooseUnits }) {
+function SectionOne({
+  currentWeather,
+  dailyWeather,
+  lat,
+  lon,
+  chooseUnits,
+  units,
+}) {
   return (
     <div className="container">
       <div className="section-one">
@@ -11,6 +18,7 @@ function SectionOne({ currentWeather, dailyWeather, lat, lon, chooseUnits }) {
           currentWeather={currentWeather}
           dailyWeather={dailyWeather}
           chooseUnits={chooseUnits}
+          units={units}
         />
         <SectionOneRight lat={lat} lon={lon} currentWeather={currentWeather} />
       </div>
