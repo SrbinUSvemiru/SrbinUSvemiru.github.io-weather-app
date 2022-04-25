@@ -25,7 +25,6 @@ function HoursList() {
     });
   }, []);
 
-  console.log(currentHours);
   return (
     <div className="hours-list">
       {!currentHours ? (

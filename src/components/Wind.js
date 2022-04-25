@@ -1,34 +1,54 @@
 import React, { useState, useEffect } from "react";
 import "./SectionTwo.css";
+import WindImg from "./WindImg";
 
 function Wind({ hourlyWeather, units, btnThree }) {
+  const [eightHoursWind, setEightHoursWind] = useState();
+  const [windIconSize, setWindIconSize] = useState();
+
+  useEffect(() => {
+    let newArray = hourlyWeather
+      .filter((value, index) => index % 3 === 0)
+      .map((value) => value);
+
+    setEightHoursWind(newArray);
+  }, [hourlyWeather]);
+
+  const windFormulaOne = (value) => {
+    const newValue = Math.round((value * 7.2) / 2);
+    return newValue;
+  };
+
+  const windFormulaTwo = (value) => {
+    const newValue = Math.round((value * 2) / 2);
+    return newValue;
+  };
+
+  console.log(eightHoursWind);
   return (
     <div className={`wind ${btnThree ? "visible" : ""}`}>
-      <div className="wind-speed">
-        {hourlyWeather.map((value, index) =>
-          index % 3 === 0 ? (
-            <p className="wind-kmh">
-              {units === "metric"
-                ? `${Math.floor((value.wind_speed * 7.2) / 2)} km/h`
-                : `${Math.floor((value.wind_speed * 2) / 2)} mph`}
-            </p>
-          ) : null
-        )}
-      </div>
-      <div className="wind-direction">
-        {hourlyWeather.map((value, index) =>
-          index % 3 === 0 ? (
-            <div className="wind-img">
-              <img
-                src="./wind.png"
-                style={{
-                  transform: `rotate(${value.wind_deg - 45}deg)`,
-                }}
-              />
-            </div>
-          ) : null
-        )}
-      </div>
+      {!eightHoursWind ? (
+        ""
+      ) : (
+        <>
+          <div className="wind-speed">
+            {eightHoursWind.map((value, index) => (
+              <p className="wind-kmh">
+                {units === "metric"
+                  ? `${windFormulaOne(value.wind_speed)} km/h`
+                  : `${windFormulaTwo(value.wind_speed)} mph`}
+              </p>
+            ))}
+          </div>
+          <div className="wind-direction">
+            {eightHoursWind.map((value, index) => (
+              <div className="wind-img">
+                <WindImg serial={index} index={index} hour={value} />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
