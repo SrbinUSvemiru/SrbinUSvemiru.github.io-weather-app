@@ -24,7 +24,6 @@ function Wind({ hourlyWeather, units, btnThree }) {
     return newValue;
   };
 
-  console.log(eightHoursWind);
   return (
     <div className={`wind ${btnThree ? "visible" : ""}`}>
       {!eightHoursWind ? (

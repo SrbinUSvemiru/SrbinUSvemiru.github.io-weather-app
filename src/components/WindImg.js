@@ -22,8 +22,6 @@ function WindImg({ serial, hour }) {
     return element;
   };
 
-  console.log(imgSize);
-
   return (
     <div className="wind-img">
       {!imgSize ? (
