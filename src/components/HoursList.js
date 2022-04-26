@@ -10,7 +10,7 @@ function HoursList() {
       const timeArray = [];
 
       for (let i = 0; i < 16; i++) {
-        if (hour > 48) {
+        if (hour >= 48) {
           const newValue = hour - 48;
           timeArray.push(newValue);
         } else if (hour > 23) {
