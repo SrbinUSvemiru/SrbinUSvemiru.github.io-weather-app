@@ -48,3 +48,9 @@
 .tile:hover{
     background-color: rgba(249, 165, 134, 0.399);
 }
+
+.tile-list a{
+    text-decoration: none;
+    color: black;
+}
+

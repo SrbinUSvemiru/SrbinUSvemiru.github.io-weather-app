@@ -9,6 +9,20 @@
     margin: 0 auto;
 }
 
+.day{
+    
+        background-color: white;
+        position: relative;
+        width: 800px;
+        padding-top: 3rem;
+        padding-bottom: 12rem;
+        overflow: hidden;
+        height: 200px;
+        margin: 0 auto;
+    
+    
+}
+
 .third-list{
     display: flex;
     width: 1600px;

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tile from "./Tile";
 import "./SectionThree.css";
-
-const newArray = [];
+import { NavLink } from "react-router-dom";
 
 function TileList({ dailyWeather }) {
   const [currentWeek, setCurrentWeek] = useState([]);
@@ -18,6 +17,8 @@ function TileList({ dailyWeather }) {
       "Saturday",
     ];
 
+    const newArray = [];
+
     const d = new Date();
     let currentDay = d.getDay();
 
@@ -30,7 +31,7 @@ function TileList({ dailyWeather }) {
     newArray.push(three);
 
     setCurrentWeek(newArray);
-  }, [newArray]);
+  }, [currentWeek]);
 
   return (
     <div className="tile-list">
@@ -39,12 +40,14 @@ function TileList({ dailyWeather }) {
       ) : (
         <>
           {dailyWeather.map((day, index) => (
-            <Tile
-              day={day}
-              key={index}
-              serial={index}
-              currentWeek={currentWeek}
-            />
+            <NavLink to={`/${currentWeek[index]}`} activeClassName="selected">
+              <Tile
+                day={day}
+                key={index}
+                serial={index}
+                currentWeek={currentWeek}
+              />
+            </NavLink>
           ))}
         </>
       )}
