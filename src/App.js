@@ -1,12 +1,12 @@
 import "./App.css";
 
 import Header from "./components/Header";
-
+import Day from "./components/Day";
 import React, { useState, useEffect } from "react";
 import SectionOne from "./components/SectionOne";
 import SectionThree from "./components/SectionThree";
 import SectionTwo from "./components/SectionTwo";
-
+import { Routes, Route } from "react-router-dom";
 const API = "0974d184cb2d8d0c23bc45b4780d0025";
 
 function App() {
@@ -40,8 +40,6 @@ function App() {
     setUnits(choice);
   };
 
-  console.log(bulkWeather);
-
   return (
     <div className="App">
       {isLoading ? (
@@ -57,11 +55,22 @@ function App() {
             chooseUnits={chooseUnits}
             units={units}
           />
-          <SectionTwo
-            dailyWeather={bulkWeather.daily}
-            hourlyWeather={bulkWeather.hourly}
-            units={units}
-          />
+          <Routes>
+            <Route
+              path="/"
+              element={<Day dailyWeather={bulkWeather.daily} />}
+            ></Route>
+            <Route
+              path="/"
+              element={
+                <SectionTwo
+                  dailyWeather={bulkWeather.daily}
+                  hourlyWeather={bulkWeather.hourly}
+                  units={units}
+                />
+              }
+            ></Route>
+          </Routes>
           <SectionThree dailyWeather={bulkWeather.daily} />
         </>
       )}
