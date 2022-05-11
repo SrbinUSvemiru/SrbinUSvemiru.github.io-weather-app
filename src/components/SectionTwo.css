@@ -249,14 +249,20 @@
 }
 
 .detailes-img{
-    width: 50px;
+    width: 40px;
+    
 }
 
-.img-container{
+.uv{
+    width: 60px;
+}
+
+.row{
     display: flex;
     align-items: center;
 }
 
 .detailes-container{
     display: flex;
+    
 }

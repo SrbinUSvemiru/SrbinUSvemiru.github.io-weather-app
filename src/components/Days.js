@@ -53,8 +53,17 @@ function Days({ dailyWeather }) {
           ""
         ) : (
           <>
-            <h2>{currentWeek[id]}</h2>
-            <div className="img-container">
+            <div className="row">
+              <div className="detailes-img uv">
+                <img
+                  src={`../icons/uv-index-${Math.round(
+                    dailyWeather[id].uvi
+                  )}.svg`}
+                  alt="UV index"
+                />
+              </div>
+            </div>
+            <div className="row">
               <div className="detailes-img">
                 <img src={`../icons/sunrise.svg`} />
               </div>
@@ -67,6 +76,21 @@ function Days({ dailyWeather }) {
               </div>
               <div className="detailes-container">
                 <p>{convertUnix(dailyWeather[id].sunset)}</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="detailes-img">
+                <img src={`../icons/moonrise.svg`} />
+              </div>
+              <div className="detailes-container">
+                <p>{convertUnix(dailyWeather[id].moonrise)}</p>
+              </div>
+
+              <div className="detailes-img">
+                <img src={`../icons/moonset.svg`} />
+              </div>
+              <div className="detailes-container">
+                <p>{convertUnix(dailyWeather[id].moonset)}</p>
               </div>
             </div>
           </>
