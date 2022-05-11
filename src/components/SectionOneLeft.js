@@ -13,8 +13,6 @@ function SectionOneLeft({ currentWeather, dailyWeather, chooseUnits, units }) {
     return Math.round(num * 2) / 2;
   };
 
-  console.log(dailyWeather[0], "kueac");
-
   return (
     <div className="left">
       <div className="icon">

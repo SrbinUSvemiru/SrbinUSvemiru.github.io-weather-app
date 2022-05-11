@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tile from "./Tile";
 import "./SectionThree.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function TileList({ dailyWeather }) {
   const [currentWeek, setCurrentWeek] = useState([]);
@@ -40,7 +40,7 @@ function TileList({ dailyWeather }) {
       ) : (
         <>
           {dailyWeather.map((day, index) => (
-            <NavLink to={`/${currentWeek[index]}`} activeClassName="selected">
+            <NavLink to={`${index}`}>
               <Tile
                 day={day}
                 key={index}

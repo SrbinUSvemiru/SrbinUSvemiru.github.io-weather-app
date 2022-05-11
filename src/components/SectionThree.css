@@ -54,3 +54,7 @@
     color: black;
 }
 
+.tile-list a.active{
+    background-color: rgba(249, 165, 134, 0.399);
+    border-radius: 10px;
+}

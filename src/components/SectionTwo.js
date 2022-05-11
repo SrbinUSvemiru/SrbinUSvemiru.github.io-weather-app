@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HoursList from "./HoursList";
 import Percipitation from "./Percipitation";
 import Wind from "./Wind";
-
+import { Route } from "react-router-dom";
 import "./SectionTwo.css";
 import Temperature from "./Temperature";
 
@@ -78,7 +78,6 @@ function SectionTwo({ dailyWeather, hourlyWeather, units }) {
             btnThree={btnThree}
             units={units}
           />
-
           <HoursList />
         </div>
       </div>

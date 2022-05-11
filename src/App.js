@@ -1,12 +1,13 @@
 import "./App.css";
 
 import Header from "./components/Header";
-import Day from "./components/Day";
+import Days from "./components/Days";
 import React, { useState, useEffect } from "react";
 import SectionOne from "./components/SectionOne";
 import SectionThree from "./components/SectionThree";
 import SectionTwo from "./components/SectionTwo";
 import { Routes, Route } from "react-router-dom";
+
 const API = "0974d184cb2d8d0c23bc45b4780d0025";
 
 function App() {
@@ -58,10 +59,6 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Day dailyWeather={bulkWeather.daily} />}
-            ></Route>
-            <Route
-              path="/"
               element={
                 <SectionTwo
                   dailyWeather={bulkWeather.daily}
@@ -69,6 +66,10 @@ function App() {
                   units={units}
                 />
               }
+            ></Route>
+            <Route
+              path=":id"
+              element={<Days dailyWeather={bulkWeather.daily} />}
             ></Route>
           </Routes>
           <SectionThree dailyWeather={bulkWeather.daily} />

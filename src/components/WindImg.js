@@ -7,17 +7,17 @@ function WindImg({ serial, hour }) {
   useEffect(() => {
     const newValue = size(Math.round((hour.wind_speed * 7.2) / 2));
     setImgSize(newValue);
-  }, []);
+  }, [imgSize]);
 
   const size = (element) => {
-    if (element < 5) {
-      element = 6.5;
-    } else if (element > 5 && element < 10) {
+    if (element <= 5) {
+      element = 5;
+    } else if (element <= 10) {
       element = 8;
-    } else if (element > 10 && element < 15) {
-      element = 10;
+    } else if (element <= 15) {
+      element = 11;
     } else {
-      element = 12;
+      element = 14;
     }
     return element;
   };

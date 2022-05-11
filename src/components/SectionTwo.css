@@ -9,13 +9,13 @@
     margin: 0 auto;
 }
 
-.day{
+.days{
     
         background-color: white;
         position: relative;
         width: 800px;
-        padding-top: 3rem;
-        padding-bottom: 12rem;
+        padding-left: 2rem;
+        padding-bottom: 15rem;
         overflow: hidden;
         height: 200px;
         margin: 0 auto;
@@ -246,4 +246,17 @@
 
 .temperature.visible{
     z-index: 10;
+}
+
+.detailes-img{
+    width: 50px;
+}
+
+.img-container{
+    display: flex;
+    align-items: center;
+}
+
+.detailes-container{
+    display: flex;
 }
