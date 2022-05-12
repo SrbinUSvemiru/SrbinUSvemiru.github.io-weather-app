@@ -1,7 +1,7 @@
 .section-two{
     background-color: white;
     position: relative;
-    width: 800px;
+    width: 900px;
     padding-top: 3rem;
     padding-bottom: 12rem;
     overflow: hidden;
@@ -13,19 +13,22 @@
     
         background-color: white;
         position: relative;
-        width: 800px;
-        padding-left: 2rem;
+        width: 900px;
+        padding-left: 1rem;
+        padding-right: 1rem;
         padding-bottom: 15rem;
         overflow: hidden;
         height: 200px;
         margin: 0 auto;
-    
+        display: flex;
+        justify-content: space-around;
+        
     
 }
 
 .third-list{
     display: flex;
-    width: 1600px;
+    width: 1800px;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
@@ -49,7 +52,7 @@
 
 .temp-third-list{
     display: flex;
-    width: 1600px;
+    width: 1800px;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
@@ -60,7 +63,7 @@
 
 .percipitation-percents{
     display: flex;
-    width: 1600px;
+    width: 1800px;
     justify-content: space-between;
     color: #5094E0;
 }
@@ -82,7 +85,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0.7rem 0;
-    width: 1600px;
+    width: 1800px;
     position: absolute;
     bottom: -185px;
 }
@@ -125,10 +128,11 @@
 }
 
 .arrow-left:hover{
-    opacity: 0.6;
+    opacity: 1;
+    
 }
 .arrow-right:hover{
-    opacity: 0.6;
+    opacity: 1;
 }
 
 .arrow-right{
@@ -153,7 +157,7 @@
 
 
 .percipitation{
-    width: 1600px;
+    width: 1800px;
     position: absolute;
     top: 0;
     background-color: white;
@@ -167,12 +171,12 @@
 
 
 .section-two-container.moved{
-    left: -800px;
+    left: -900px;
     transition: all 0.5s ease ;
 }
 
 .wind{
-    width: 1600px;
+    width: 1800px;
     position: absolute;
     top: 0;
     background-color: white;
@@ -182,7 +186,7 @@
 .wind-speed{
     display: flex;
     justify-content: space-between;
-    width: 1600px;
+    width: 1800px;
 }
 
 .wind-kmh{
@@ -191,7 +195,7 @@
 }
 
 .wind-direction{
-    width: 1600px;
+    width: 1800px;
     display: flex;
     justify-content: space-between;
     margin-top: 2.8rem;
@@ -230,7 +234,7 @@
 
 
 .temperature{
-    width: 1600px;
+    width: 1800px;
     position: absolute;
     top: 0;
     background-color: white;
@@ -239,7 +243,7 @@
 
 .temperature-value{
     display: flex;
-    width: 1600px;
+    width: 1800px;
     justify-content: space-between;
     color: orange;
 }
@@ -248,21 +252,57 @@
     z-index: 10;
 }
 
-.detailes-img{
-    width: 40px;
+ul{
+    margin: 0;
+    padding: 0;
     
 }
 
-.uv{
-    width: 60px;
+.column{
+    width: 25%;
+    padding-top:2.5rem ;
 }
 
-.row{
+
+
+ li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid lightblue;
+}
+
+.first-li{
+    border-top: 0px;
+}
+
+
+
+.detailes{
     display: flex;
     align-items: center;
 }
 
-.detailes-container{
-    display: flex;
-    
+.detailes img{
+    width: 50px;
+}
+
+
+.go-back{
+    width: 20px;
+    transform: scaleX(-1);
+    cursor: pointer;
+    opacity: 0.3;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 107px;
+    left: 5px;
+
+}
+
+.go-back:hover{
+    opacity: 1;
+    width: 23px;
 }

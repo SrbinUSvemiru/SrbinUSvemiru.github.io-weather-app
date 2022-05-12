@@ -69,7 +69,7 @@ function App() {
             ></Route>
             <Route
               path=":id"
-              element={<Days dailyWeather={bulkWeather.daily} />}
+              element={<Days dailyWeather={bulkWeather.daily} units={units} />}
             ></Route>
           </Routes>
           <SectionThree dailyWeather={bulkWeather.daily} />

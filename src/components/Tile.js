@@ -14,7 +14,7 @@ function Tile({ day, serial, currentWeek }) {
       </div>
       <div className="max-min-temp">
         <p className="max">{roundNum(day.temp.max)}&#176;</p>
-        <p className="min">{roundNum(day.temp.min)}&#176;</p>
+        <p className="min">/{roundNum(day.temp.min)}&#176;</p>
       </div>
     </div>
   );

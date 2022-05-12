@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./SectionTwo.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-function Days({ dailyWeather }) {
+function Days({ dailyWeather, units }) {
   const [currentWeek, setCurrentWeek] = useState([]);
   const { id } = useParams();
   const [convertedTime, setConvertedTime] = useState({});
@@ -43,6 +43,16 @@ function Days({ dailyWeather }) {
     return added;
   };
 
+  const windFormulaOne = (value) => {
+    const newValue = Math.round((value * 7.2) / 2);
+    return newValue;
+  };
+
+  const windFormulaTwo = (value) => {
+    const newValue = Math.round((value * 2) / 2);
+    return newValue;
+  };
+
   console.log(dailyWeather);
   console.log(convertUnix(dailyWeather[0].sunset));
 
@@ -53,45 +63,108 @@ function Days({ dailyWeather }) {
           ""
         ) : (
           <>
-            <div className="row">
-              <div className="detailes-img uv">
-                <img
-                  src={`../icons/uv-index-${Math.round(
-                    dailyWeather[id].uvi
-                  )}.svg`}
-                  alt="UV index"
-                />
-              </div>
+            <div className="column">
+              <ul>
+                <li className="first-li">
+                  <Link to="/">
+                    <img src="../left.png" className="go-back" />
+                  </Link>
+                </li>
+                <li className="first-li">
+                  <div className="detailes">
+                    <img src="../icons/thermometer.svg" />
+                    <p>Feels Like</p>
+                  </div>
+                  <p>
+                    {Math.round(dailyWeather[id].feels_like.day)}&#176;/
+                    {Math.round(dailyWeather[id].feels_like.night)}&#176;
+                  </p>
+                </li>
+                <li>
+                  <div className="detailes">
+                    <img src="../icons/humidity.svg" />
+                    <p>Humidity</p>
+                  </div>
+                  <p>{dailyWeather[id].humidity}%</p>
+                </li>
+                <li>
+                  <div className="detailes">
+                    <img src="../icons/barometer.svg" />
+                    <p>Pressure</p>
+                  </div>
+                  <p>{dailyWeather[id].pressure} mb</p>
+                </li>
+              </ul>
             </div>
-            <div className="row">
-              <div className="detailes-img">
-                <img src={`../icons/sunrise.svg`} />
-              </div>
-              <div className="detailes-container">
-                <p>{convertUnix(dailyWeather[id].sunrise)}</p>
-              </div>
+            <div className="column">
+              <ul>
+                <li className="first-li">
+                  <div className="detailes">
+                    <img src="../icons/wind.svg" />
+                    <p>Wind</p>
+                  </div>
+                  <p>
+                    {units === "metric"
+                      ? `${windFormulaOne(dailyWeather[id].wind_speed)} km/h`
+                      : `${windFormulaTwo(dailyWeather[id].wind_speed)} mph`}
+                  </p>
+                </li>
+                <li>
+                  <div className="detailes">
+                    <img src="../icons/thermometer-raindrop.svg" />
+                    <p>Dew Point</p>
+                  </div>
+                  <p>{dailyWeather[id].dew_point}&#176;</p>
+                </li>
 
-              <div className="detailes-img">
-                <img src={`../icons/sunset.svg`} />
-              </div>
-              <div className="detailes-container">
-                <p>{convertUnix(dailyWeather[id].sunset)}</p>
-              </div>
+                <li>
+                  <div className="detailes">
+                    <img
+                      src={`../icons/uv-index-${Math.floor(
+                        dailyWeather[id].uvi
+                      )}.svg`}
+                    />
+                    <p>UV Index</p>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div className="row">
-              <div className="detailes-img">
-                <img src={`../icons/moonrise.svg`} />
-              </div>
-              <div className="detailes-container">
-                <p>{convertUnix(dailyWeather[id].moonrise)}</p>
-              </div>
-
-              <div className="detailes-img">
-                <img src={`../icons/moonset.svg`} />
-              </div>
-              <div className="detailes-container">
-                <p>{convertUnix(dailyWeather[id].moonset)}</p>
-              </div>
+            <div className="column">
+              <ul>
+                <li className="first-li">
+                  <div className="detailes">
+                    <img src="../icons/sunrise.svg" />
+                    <p>{convertUnix(dailyWeather[id].sunrise)}</p>
+                  </div>
+                  <div className="detailes">
+                    <img src="../icons/sunset.svg" />
+                    <p>{convertUnix(dailyWeather[id].sunset)}</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="detailes">
+                    <img src="../icons/moonrise.svg" />
+                    <p>{convertUnix(dailyWeather[id].moonrise)}</p>
+                  </div>
+                  <div className="detailes">
+                    <img src="../icons/moonset.svg" />
+                    <p>{convertUnix(dailyWeather[id].moonset)}</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="detailes">
+                    <img
+                      src={`../icons/${dailyWeather[id].weather[0].icon}.svg`}
+                    />
+                  </div>
+                  <p>
+                    {dailyWeather[id].weather[0].description
+                      .charAt(0)
+                      .toUpperCase() +
+                      dailyWeather[id].weather[0].description.slice(1)}
+                  </p>
+                </li>
+              </ul>
             </div>
           </>
         )}

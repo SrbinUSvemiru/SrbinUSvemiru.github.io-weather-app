@@ -1,7 +1,7 @@
 .section-three{
     background-color: white;
     color: black;
-    width: 800px;
+    width: 900px;
     display: flex;
     justify-content: center;
     border-radius: 0 0 15px 15px;
@@ -11,9 +11,11 @@
 
 .tile-list{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .tile{
@@ -33,7 +35,7 @@
 
 .max-min-temp{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 70%;
 }
 
